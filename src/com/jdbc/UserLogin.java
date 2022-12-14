@@ -8,38 +8,14 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class UserLogin  {
-	public static void userLogin() throws SQLException {
-		
-		
-		Scanner scan=new Scanner(System.in);
-		System.out.println("Enter 1 for login");
-		System.out.println("Enter 2 for registration");
-		
-		String number=scan.next();
-		
-		switch (number) {
-		case "1":
-			System.out.println();
-			UserLogin ul1=new UserLogin();
-			ul1.checklogin();
-			//break;
-		case "2":
-			System.out.println();
-			//break;
-		
-		/*default: {
-			System.out.println("Invalid selection");
-		}*/
-		UserRegistration user=new UserRegistration();
-		user.userRegister();
 
-	}
-	}
-	public void checklogin() {
-	
+	public static Scanner scan=new Scanner(System.in);
+	public  void checklogin() throws SQLException {
+	//public static void userLogin() throws SQLException {
+	//public void checklogin() {
 		Connection con = null;
 		PreparedStatement ps = null;
-String Password="GroupT";
+        String Password="GroupT";
 		try {
 			Scanner scanner  =new Scanner(System.in);
 			System.out.println("User Login");
@@ -48,6 +24,8 @@ String Password="GroupT";
 			System.out.print("Enter Pasword>> ");
 			String password = scanner.next();
 			
+			
+		
 			if (password.equals("GroupT")) {
 				System.out.println("sucessfully logged");
 				//System.exit(0);
@@ -65,7 +43,6 @@ String Password="GroupT";
 			
 			ps.execute();
 		
-
 			
 		} catch (Exception e) {
 			System.out.println(e);

@@ -12,12 +12,12 @@ public class UserRegistration {
 	//public static void main(String[] args) throws SQLException {
 		/*UserLogin user=new UserLogin(); 
 		user.userLogin();*/
-		
+	public static Scanner sc = new Scanner(System.in);
 		public static void userRegister() throws SQLException {
 			UserLogin user=new UserLogin(); 
-			user.userLogin();
+			user.checklogin();
 		
-		Scanner sc = new Scanner(System.in);
+		
 		System.out.println("Enter firstName>>");
 		String name = sc.next();
 		System.out.println("Enter lastName");
@@ -49,9 +49,12 @@ public class UserRegistration {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		}
+		public void selectProduct() throws SQLException{
 		ProductDetails pd = new ProductDetails();
 		pd.insertProductDetails();
 		System.out.println("enter product number");
+		
 		int i=sc.nextInt();
 		int a=0;
 		int j;
@@ -359,9 +362,9 @@ public class UserRegistration {
 			}
 			
 	    }
-		
+/*		
 	AdminLogin login = new AdminLogin();
-		login.adminlogin();
+		login.adminlogin();*/
 			
 	}
 
